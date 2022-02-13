@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+  using namespace std;
+  
+  int main()
+  {
+    int t;
+   cin>>t;
+   while(t--)//test cases
+   {
+     int num,x,n,p,q,r,s,i;
+     cin>>num;
+     x=num+1;
+     while(x<=INT_MAX)
+     {
+       n=x;
+       for(i=1;i<=4;i++)
+     {
+       switch(i){//for getting separate digits of a number
+         case 1:
+         p=x%10; //p will be units digit
+         x=x/10;
+         break;
+         case 2:
+         q=x%10;//q will be tenths
+         x=x/10;
+         break;
+         case 3://r will be hundreds
+         r=x%10;
+         x=x/10;
+         break;
+        case 4://s will be thousands
+         s=x%10;
+         x=x/10;
+         break;
+         }//switch gets over
+     }//for gets over
+     x=n;
+     if(s==q||s==p||s==r||r==q||r==p||q==p)//for checking
+     //of digits
+     {
+       x=x+1;
+     }
+     else
+     break;
+     }//while gets over
+     cout<<x<<endl;
+   }
+    
+    return 0;
+  }
